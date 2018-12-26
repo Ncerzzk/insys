@@ -1,0 +1,13 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+form.user {
+  input#user_login,
+  input#user_password_confirmation,
+  input#user_phone,
+  input#user_passwd ,
+  input#user_name { width:100px; }
+
+  textarea#user_address{width:200px;height:100px;}
+}
