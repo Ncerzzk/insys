@@ -17,56 +17,56 @@
 
   <div class="form-group">
     <%= f.label :receiver_name,"收件人", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :receiver_name, :class => 'form-control' %>
     </div>
     <%=f.error_span(:receiver_name) %>
   </div>
   <div class="form-group">
     <%= f.label :receiver_address,"收件地址", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :receiver_address, :class => 'form-control' %>
     </div>
     <%=f.error_span(:receiver_address) %>
   </div>
   <div class="form-group">
     <%= f.label :receiver_phone,"收件人手机号码", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :receiver_phone, :class => 'form-control' %>
     </div>
     <%=f.error_span(:receiver_phone) %>
   </div>
   <div class="form-group">
     <%= f.label :sender_name,"寄件人", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :sender_name, :class => 'form-control' %>
     </div>
     <%=f.error_span(:sender_name) %>
   </div>
   <div class="form-group">
     <%= f.label :sender_address,"寄件人地址", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :sender_address, :class => 'form-control' %>
     </div>
     <%=f.error_span(:sender_address) %>
   </div>
   <div class="form-group">
     <%= f.label :sender_phone, "寄件人手机号码",:class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :sender_phone, :class => 'form-control' %>
     </div>
     <%=f.error_span(:sender_phone) %>
   </div>
   <div class="form-group">
     <%= f.label :mass,"质量" ,:class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :mass, :class => 'form-control' %>
     </div>
     <%=f.error_span(:mass) %>
   </div>
   <div class="form-group">
     <%= f.label :pay_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :pay_id, :class => 'form-control' %>
     </div>
     <%=f.error_span(:pay_id) %>
@@ -74,7 +74,7 @@
   <!--
   <div class="form-group">
     <%= f.label :pay_type, "支付方式",:class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :pay_type, :class => 'form-control' %>
     </div>
     <%=f.error_span(:pay_type) %>
@@ -82,14 +82,14 @@
   -->
   <div class="form-group">
     <%= f.label :who_pay, "运费:",:class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-sm-10">
       <%= f.text_field :who_pay, :class => 'form-control' %>
     </div>
     <%=f.error_span(:who_pay) %>
   </div>
 
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
+    <div class="col-lg-offset-2 col-sm-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 goods_path, :class => 'btn btn-default' %>
