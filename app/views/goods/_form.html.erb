@@ -64,6 +64,7 @@
     </div>
     <%=f.error_span(:mass) %>
   </div>
+  <!--
   <div class="form-group">
     <%= f.label :pay_id, :class => 'control-label col-lg-2' %>
     <div class="col-sm-10">
@@ -71,7 +72,7 @@
     </div>
     <%=f.error_span(:pay_id) %>
   </div>
-  <!--
+
   <div class="form-group">
     <%= f.label :pay_type, "支付方式",:class => 'control-label col-lg-2' %>
     <div class="col-sm-10">
@@ -81,9 +82,9 @@
   </div>
   -->
   <div class="form-group">
-    <%= f.label :who_pay, "运费:",:class => 'control-label col-lg-2' %>
+    <%= f.label :who_pay, "运费支付:",:class => 'control-label col-lg-2' %>
     <div class="col-sm-10">
-      <%= f.text_field :who_pay, :class => 'form-control' %>
+      <%= f.select :who_pay, { "寄付" => "1", "到付" => "2"},options = {:class => 'form-control'} %>
     </div>
     <%=f.error_span(:who_pay) %>
   </div>

@@ -1,5 +1,7 @@
 class GoodsController < ApplicationController
-  before_action :set_good, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_webuser! ,only:[:index]
+  before_action :authenticate_admin ,only: [:index]
+  before_action :set_good, only: [:show, :edit, :update, :destroy,:set_status]
 
   # GET /goods
   # GET /goods.json
@@ -28,7 +30,8 @@ class GoodsController < ApplicationController
 
     respond_to do |format|
       if @good.save
-        format.html { redirect_to @good, notice: 'Good was successfully created.' }
+        #format.html { redirect_to @good, notice: 'Good was successfully created.' }
+        format.html{render :_OK}
         format.json { render :show, status: :created, location: @good }
       else
         format.html { render :new }
@@ -61,6 +64,22 @@ class GoodsController < ApplicationController
     end
   end
 
+  def set_status
+    @good.status=params[:status]
+    respond_to do |format|
+      format.html{render :_OK}
+      format.json{ render :show, status: :ok, location: @good }
+    end
+  end
+
+  def get_rqrcode
+    id=params[:id]
+    qr=RQRCode::QRCode.new("http://littlehu.com:3000/goods/#{id}",:size => 4, :level => :h )
+    @qrcode_str = Base64.encode64( qr.to_img.resize(400,400).to_s )
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_good
@@ -69,6 +88,6 @@ class GoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def good_params
-      params.require(:good).permit(:receiver_name, :receiver_address, :receiver_phone, :sender_name, :sender_address, :sender_phone, :mass, :pay_id, :pay_type, :who_pay)
+      params.require(:good).permit(:receiver_name, :receiver_address, :receiver_phone, :sender_name, :sender_address, :sender_phone, :mass, :pay_id, :pay_type, :who_pay,:status)
     end
 end

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :goods
+  devise_for :webusers
+  resources :goods do
+    member do
+      post 'set_status'
+      get 'get_rqrcode'
+    end
+  end
   resources :friends
   resources :provinces
-  resources :users
+
+  root to: "goods#new"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

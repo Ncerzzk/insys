@@ -20,7 +20,8 @@ class GoodsControllerTest < ActionDispatch::IntegrationTest
       post goods_url, params: { good: { mass: @good.mass, pay_id: @good.pay_id, pay_type: @good.pay_type, receiver_address: @good.receiver_address, receiver_name: @good.receiver_name, receiver_phone: @good.receiver_phone, sender_address: @good.sender_address, sender_name: @good.sender_name, sender_phone: @good.sender_phone, who_pay: @good.who_pay } }
     end
 
-    assert_redirected_to good_url(Good.last)
+#    assert_redirected_to good_url(Good.last)
+      assert_response :success
   end
 
   test "should show good" do
@@ -38,6 +39,11 @@ class GoodsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to good_url(@good)
   end
 
+  test "should set_status" do
+    post set_status_good_url(@good), params: { good: {status:1}}
+    assert_response :success
+  end
+
   test "should destroy good" do
     assert_difference('Good.count', -1) do
       delete good_url(@good)
@@ -45,4 +51,6 @@ class GoodsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to goods_url
   end
+
+
 end

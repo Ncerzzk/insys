@@ -17,6 +17,7 @@
       <th><%= model_class.human_attribute_name(:pay_type) %></th>
       <th><%= model_class.human_attribute_name(:who_pay) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -35,6 +36,7 @@
         <td><%= good.pay_type %></td>
         <td><%= good.who_pay %></td>
         <td><%=l good.created_at %></td>
+        <td><%= good.status %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       good_path(good), :class => 'btn btn-default btn-xs' %>
