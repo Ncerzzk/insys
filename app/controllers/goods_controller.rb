@@ -1,8 +1,9 @@
 class GoodsController < ApplicationController
   before_action :authenticate_webuser! ,only:[:index]
   before_action :authenticate_admin ,only: [:index]
+  skip_before_filter :verify_authenticity_token,only:[:set_status]
   before_action :set_good, only: [:show, :edit, :update, :destroy,:set_status]
-
+  
   # GET /goods
   # GET /goods.json
   def index
