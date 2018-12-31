@@ -67,9 +67,8 @@ class GoodsController < ApplicationController
   end
 
   def set_status
-    @good.status=params[:status]
-    print(@good.status.to_s+"              \r\n")
-    print(params[:status]+"            \r\n")
+    @good.change_status(params[:status])
+
     respond_to do |format|
       format.html{render :_OK}
       format.json{ render :show, status: :ok, location: @good }
