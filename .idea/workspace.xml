@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fe21814-c5be-46b4-942a-f96aa79cfdf6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/goods_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/goods_controller.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/goods_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="79" column="69" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
+            <state relative-caret-position="410">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
         </entry>
@@ -403,12 +402,12 @@
       <workItem from="1545784480048" duration="4595000" />
       <workItem from="1546144797703" duration="19887000" />
       <workItem from="1546232208648" duration="3174000" />
-      <workItem from="1546311954742" duration="31000" />
+      <workItem from="1546311954742" duration="152000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43673000" />
+    <option name="totallyTimeSpent" value="43794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/goods_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="79" column="69" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
+        <state relative-caret-position="410">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>

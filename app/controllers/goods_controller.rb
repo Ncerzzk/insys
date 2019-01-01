@@ -77,7 +77,7 @@ class GoodsController < ApplicationController
 
   def get_rqrcode
     id=params[:id]
-    qr=RQRCode::QRCode.new("http://littlehu.com:3000/goods/#{id}/edit",:size => 4, :level => :h )
+    qr=RQRCode::QRCode.new("http://littlehu.com:3000/goods/#{id}/edit", :level => :h )
     @qrcode_str = Base64.encode64( qr.to_img.resize(400,400).to_s )
   end
 
