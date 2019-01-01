@@ -3,7 +3,7 @@ class GoodsController < ApplicationController
   before_action :authenticate_admin ,only: [:index]
   #skip_before_filter :verify_authenticity_token,only:[:set_status]
   skip_before_action :verify_authenticity_token,only:[:set_status]
-  before_action :set_good, only: [:show, :edit, :update, :destroy,:set_status]
+  before_action :set_good, only: [:show, :edit, :update, :destroy,:set_status,:get_rqrcode]
 
   # GET /goods
   # GET /goods.json
@@ -14,6 +14,7 @@ class GoodsController < ApplicationController
   # GET /goods/1
   # GET /goods/1.json
   def show
+    get_rqrcode
   end
 
   # GET /goods/new
@@ -76,7 +77,7 @@ class GoodsController < ApplicationController
   end
 
   def get_rqrcode
-    id=params[:id]
+    id=@good.id
     qr=RQRCode::QRCode.new("http://littlehu.com:3000/goods/#{id}/edit", :level => :h )
     @qrcode_str = Base64.encode64( qr.to_img.resize(400,400).to_s )
   end

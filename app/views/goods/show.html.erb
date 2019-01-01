@@ -1,31 +1,40 @@
 <%- model_class = Good -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1>逆风快递</h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:receiver_name) %>:</strong></dt>
+  <dt><strong>收件人姓名:</strong></dt>
   <dd><%= @good.receiver_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:receiver_address) %>:</strong></dt>
+  <dt><strong>收件人地址:</strong></dt>
   <dd><%= @good.receiver_address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:receiver_phone) %>:</strong></dt>
+  <dt><strong>收件人手机号码:</strong></dt>
   <dd><%= @good.receiver_phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sender_name) %>:</strong></dt>
+  <dt><strong>寄件人姓名:</strong></dt>
   <dd><%= @good.sender_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sender_address) %>:</strong></dt>
+  <dt><strong>寄件人地址:</strong></dt>
   <dd><%= @good.sender_address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sender_phone) %>:</strong></dt>
+  <dt><strong>寄件人手机号码:</strong></dt>
   <dd><%= @good.sender_phone %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mass) %>:</strong></dt>
+  <dt><strong>包裹质量:</strong></dt>
   <dd><%= @good.mass %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:pay_id) %>:</strong></dt>
+  <!--
+  <dt><strong>支付ID:</strong></dt>
   <dd><%= @good.pay_id %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:pay_type) %>:</strong></dt>
   <dd><%= @good.pay_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:who_pay) %>:</strong></dt>
-  <dd><%= @good.who_pay %></dd>
+    -->
+  <dt><strong>支付方式:</strong></dt>
+  <% if @good.who_pay==1 %>
+  <!--<dd><%= @good.who_pay %></dd>-->
+    <dd>寄付</dd>
+    <% else %>
+    <dd>到付</dd>
+    <% end %>
 </dl>
-
+<img src="data:image/png;base64,<%= @qrcode_str -%>"/>
+<!--
 <%= link_to t('.back', :default => t("helpers.links.back")),
               goods_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -35,3 +44,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+-->
